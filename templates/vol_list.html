@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volunteer List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Volunteer List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Event ID</th>
+            <th>Action</th>
+
+        </tr>
+        {% for user in volunteers %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.eventid }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_user', user_id=user.id,ev_id=user.eventid) }}" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

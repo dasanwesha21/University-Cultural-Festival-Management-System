@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisers Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, Organisers!</h2>
+        <p>Here are the available options for you:</p>
+        <ul>
+            <li><a href = "{{url_for('profile_org', org_name = name)}}" class = 'btn btn-primary'>Your Profile</a></li>
+            <li><a href = "{{url_for('add_event')}}" class = 'btn btn-primary'>Add Event</a></li>
+            <li><a href = "{{url_for('update_event')}}" class = 'btn btn-primary'>Update Events</a></li>
+            <li><a href = "{{url_for('logout')}}" class = 'btn btn-primary'>Logout</a></li>
+        </ul>
+        <a href = "/logout">Logout</a>
+    </div>
+</body>
+</html>

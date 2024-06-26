@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Organisers Signup Page</h2>
+        <form action="/signup_submit_org", method="POST">
+            <div class="form-group">
+                <label for="name_org">Name:</label>
+                <input type="text" id="name_org" name="name_org" required>
+            </div>
+            <div class="form-group">
+                <label for="email_org">Email:</label>
+                <input type="email" id="email_org" name="email_org" required>
+            </div>
+            <div class="form-group">
+                <label for="password_org">Password:</label>
+                <input type="password" id="password_org" name="password_org" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <form action="#" method="POST" id="redirectForm">
+            <button type="submit" name="redirect" value="signup_org_back">Back</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'signup_org_back') {
+                this.action = "{{ url_for('signup_org_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

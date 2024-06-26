@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, Student!</h2>
+        <p>Here are the available options for you:</p>
+        <ul>
+            <li><a href = "{{url_for('event_liststd', std_name = name)}}" class = 'btn btn-primary'>List of Events</a></li>
+            <li><a href = "{{url_for('profile_std', std_name = name)}}" class = 'btn btn-primary'>Your Profile</a></li>
+        </ul>
+        <!--create a button for logout-->
+        <a href = "/logout">Logout</a>
+    </div>
+</body>
+</html

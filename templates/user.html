@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Selection</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>User Selection</h2>
+        <form action="#" method="POST" id="redirectForm">
+            <button type="submit" name="redirect" value="org_index">Organisers</button>
+            <button type="submit" name="redirect" value="student_index">Student</button>
+            <button type="submit" name="redirect" value="external_index">External</button>
+            <button type="submit" name="redirect" value="user_back">Back</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'org_index') {
+                this.action = "{{ url_for('org_index') }}";
+            } else if (redirectType === 'student_index') {
+                this.action = "{{ url_for('student_index') }}";
+            } else if (redirectType === 'external_index') {
+                this.action = "{{ url_for('external_index') }}";
+            } else if (redirectType === 'user_back') {
+                this.action = "{{ url_for('user_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Event</h2>
+        <form action="/add_event_submit" method="POST">
+            <div class="form-grid_oup">
+                <label for="id_event">ID:</label>
+                <input type="numeric" id="id_event" name="id_event" required>
+            </div>
+            <div class="form-group">
+                <label for="name_event">Event Name:</label>
+                <input type="text" id="name_event" name="name_event" required>
+            </div>
+            <div class="form-group">
+                <label for="start_date_time_event">Start Date:</label>
+                <input type="datetime" id="start_date_time_event" name="start_date_time_event" required>
+            </div>
+            <div class="form-group">
+                <label for="end_date_time_event">End Date:</label>
+                <input type="datetime" id="end_date_time_event" name="end_date_time_event" required>
+            </div>
+            <div class="form-group">
+                <label for="venue_event">Event Venue:</label>
+                <input type="text" id="venue_event" name="venue_event" required>
+            </div>
+            <div class="form-group">
+                <label for="description_event">Event Description:</label>
+                <input type="text" id="description_event" name="description_event" required>
+            </div>
+            <div class="form-group">
+                <label for="budget_event">Event Budget:</label>
+                <input type="numeric" id="budget_event" name="budget_event" required>
+            </div>
+
+            <button type="submit">Add Event</button>
+        </form>
+</html>

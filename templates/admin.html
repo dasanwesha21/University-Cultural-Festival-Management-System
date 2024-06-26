@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign In</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sign In</h2>
+        <form action="/admin_submit", method = 'POST'>
+            <div class="form-group">
+                <label for="name_admin">Userame:</label>
+                <input type="text" id="name_admin" name="name_admin" required >
+            </div>
+            <div class="form-group">
+                <label for="email_admin">Email:</label>
+                <input type="email" id="email_admin" name="email_admin" required >
+            </div>
+            <div class="form-group">
+                <label for="password_admin">Password:</label>
+                <input type="password" id="password_admin" name="password_admin" required >
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <form action="#" method="POST" id="redirectForm">
+            <button type="submit" name="redirect" value="admin_back">Back</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'admin_back') {
+                this.action = "{{ url_for('admin_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

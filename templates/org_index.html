@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisation Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Organisers Page</h2>
+        <div class="buttons">
+            <form action="#" method="POST" id="signupForm_org">
+                <button type="submit">Sign Up</button>
+            </form>
+            <form action="#" method="POST" id="loginForm_org">
+                <button type="submit">Log In</button>
+            </form>
+            <form action="#" method="POST" id="redirectForm">
+                <button type="submit" name="redirect" value="org_index_back">Back</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm_org').addEventListener('submit', function(event) {
+            this.action = "{{ url_for('signup_org')}}";
+        });
+
+        document.getElementById('loginForm_org').addEventListener('submit', function(event) {
+            this.action = "{{ url_for('login_org')}}";
+        });
+
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'org_index_back') {
+                this.action = "{{ url_for('org_index_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

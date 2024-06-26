@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
+
+        </tr>
+            <!-- external = {{ external }} -->
+            ID = 24CF{{ organiser.id }}
+            <td>{{ organiser.name_ }}</td>
+            <td>{{ organiser.email }}</td>
+            
+            <td>
+                <a href = "{{ url_for('edit_profile_org' , org_id = organiser.id)}}">Edit</a>
+            </td>
+            <td>
+                <a href = "{{ url_for('main_org' , name = organiser.id)}}">Back</a>
+            </td>
+            
+    
+    </table>
+</body>
+</html>

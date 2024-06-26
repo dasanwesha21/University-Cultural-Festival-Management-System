@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Admin</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add Admin</h2>
+        role = {{ role }}
+        {% if role == 'student' %}
+        <form action = '/add_std', method = 'POST'>
+            <div class="form-group" id="name_std">
+                <label for="name_std">Name:</label>
+                <input type="text" id="name_std" name="name_std" required>
+            </div>
+            <div class="form-group" id="email_std">
+                <label for="email_std">Email:</label>
+                <input type="email" id="email_std" name="email_std" required>
+            </div>
+            <div class="form-group" id="password_std">
+                <label for="password_std">Password:</label>
+                <input type="password" id="password_std" name="password_std" required>
+            </div>
+            <div class="form-group" id="roll_std">
+                <label for="roll_std">Roll Number:</label>
+                <input type="number" id="roll_std" name="roll_std" required>
+            </div>
+            <div class="form-group" id="dept_std">
+                <label for="dept_std">Department Name:</label>
+                <input type="text" id="dept_std" name="dept_std" required>
+            </div>
+            <div class="form-group" id="hall_std">
+                <label for="hall_std">Hall Name:</label>
+                <input type="text" id="hall_std" name="hall_std" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        {% elif role == 'external' %}
+        <form action = '/add_ext', method = 'POST'>
+            <div class="form-group" id="name_ext">
+                <label for="name_ext">Name:</label>
+                <input type="text" id="name_ext" name="name_ext" required>
+            </div>
+            <div class="form-group" id="email_ext">
+                <label for="email_ext">Email:</label>
+                <input type="email" id="email_ext" name="email_ext" required>
+            </div>
+            <div class="form-group" id="password_ext">
+                <label for="password_ext">Password:</label>
+                <input type="password" id="password_ext" name="password_ext" required>
+            </div>
+            <div class="form-group" id="college_name_ext">
+                <label for="college_name_ext">College Name:</label>
+                <input type="text" id="college_name_ext" name="college_name_ext" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        {% elif role == 'organiser' %}
+        <form action = '/add_org', method = 'POST'>
+            <div class="form-group">
+                <label for="name_org">Name:</label>
+                <input type="text" id="name_org" name="name_org" required>
+            </div>
+            <div class="form-group">
+                <label for="email_org">Email:</label>
+                <input type="email" id="email_org" name="email_org" required>
+            </div>
+            <div class="form-group">
+                <label for="password_org">Password:</label>
+                <input type="password" id="password_org" name="password_org" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        {% endif %}
+
+    </div>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Cultural Festival</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>University Cultural Festival</h1>
+        <div class="buttons">
+            <form id="redirectForm" method="POST">
+                <button type="submit" name="redirect" value="admin">Admin</button>
+                <button type="submit" name="redirect" value="user">User</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'admin') {
+                this.action = "{{ url_for('admin') }}";
+            } else if (redirectType === 'user') {
+                this.action = "{{ url_for('user') }}";
+            }
+        });
+    </script>
+</body>
+</html>

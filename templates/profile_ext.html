@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <table border="1">
+        <tr>
+            <!-- <th>Id</th> -->
+            <th>Name</th>
+            <th>Email</th>
+            <th>College Name</th>
+            <th>Accommodation</th>
+            <th>Canteen</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
+
+        </tr>
+            <!-- external = {{ external }} -->
+            ID = 24CF{{ external.id }}
+            <td>{{ external.name_ }}</td>
+            <td>{{ external.email }}</td>
+            <td>{{ external.college_name }}</td>
+            <td>{{ external.accommodation }}</td>
+            <td>{{ external.canteen }}</td>
+            <td>
+                <a href = "{{ url_for('edit_profile_ext' , ext_id = external.id)}}">Edit</a>
+            </td>
+            <td>
+                <a href = "{{ url_for('main_ext' , name = external.id)}}">Back</a>
+            </td>
+            
+    
+    </table>
+</body>
+</html>

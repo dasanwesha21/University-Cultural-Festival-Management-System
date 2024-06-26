@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="../static/styles.css">
+    </head>
+<body>
+    <div class = "container">
+        <h2>Edit Event Details</h2>
+        <form action = " {{ url_for('submit_event', event_id = event.id)}}" method="POST" >
+            <div class="form-group" id="name_event">
+                <label for="name_event">Name</label>
+                <input type="text" id="name_event" name="name_event"  required value = {{event.name_}}>
+            </div>
+            <div class="form-group" id="start_date_time">
+                <label for="start_date_time">Start Date and Time</label>
+                <textarea id="start_date_time" name="start_date_time">{{event.start_date_time}}</textarea>
+                <!-- <input type="datetime" id="start_date_time" name="start_date_time" required value = {{event.start_date_time}} > -->
+            </div>
+            <div class="form-group" id="end_date_time">
+                <label for="end_date_time">End Date and Time</label>
+                <textarea id="end_date_time" name="end_date_time">{{event.end_date_time}}</textarea>
+                <!-- <input type="datetime" id="end_date_time" name="end_date_time" required value = {{event.end_date_time}} > -->
+            </div>
+            <div class="form-group" id="venue_">
+                <label for="venue_">Venue</label>
+                <input type="text" id="venue_" name="venue_" required value = {{event.venue}} >
+            </div>
+            <div class="form-group" id="description_event">
+                <label for="description_event">Description</label>
+                <input type="text" id="description_event" name="description_event" required value = {{event.descr}} >
+            </div>
+            <div class="form-group" id="budget">
+                <label for="budget">Budget</label>
+                <input type="number" id="budget" name="budget" required value = {{event.budget}}>
+            </div>
+            <div class="form-group" id="status_event">
+                <label for="status_event">Status</label>
+                <textarea id="status_event" name="status_event">{{event.status}}</textarea>
+                <!-- <input type="text" id="status_event" name="status_event" required value = {{event.status}} > -->
+            </div>
+            <div class="form-group" id="winner_id">
+                <label for="winner_id">Winner ID</label>
+                <input type="number" id="winner_id" name="winner_id"  value = {{event.winner_id}}>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+        <a href = "{{ url_for('update_event')}}" class = 'btn btn-primary' >Back</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Event</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Update Event</h2>
+        <!--  list all the events and give two options: either change the event or delete the event-->
+        <table>
+            <tr>
+                <TH>Event ID</TH>
+                <th>Event Name</th>
+                <th>Start Date and Time</th>
+                <th>End Date and Time</th>
+                <th>Venue</th>
+                <th>Description</th>
+                <th>Budget</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for event in events %}
+            <tr>
+                <td>{{event.id}}</td>
+                <td>{{event.name_}}</td>
+                <td>{{event.start_date_time}}</td>
+                <td>{{event.end_date_time}}</td>
+                <td>{{event.venue}}</td>
+                <td>{{event.descr}}</td>
+                <td>{{event.budget}}</td>
+                <td>{{event.status}}</td>
+                <td><a href = "{{url_for('update_event_submit', event_id = event.id)}}" class = 'btn btn-primary'>Update</a></td>
+                <td><a href = "{{url_for('delete_event_org', event_id = event.id)}}" class = 'btn btn-primary'>Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+</html>

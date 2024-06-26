@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Student Login Page</h2>
+        <form action="/login_submit_std", method="POST">
+            <div class="form-group">
+                <label for="id_std">ID:</label>
+                <input type="text" id="id_std" name="id_std" required>
+            </div>
+            <div class="form-group">
+                <label for="password_std">Password:</label>
+                <input type="password" id="password_std" name="password_std" required>
+            </div>
+            <div class="form-group">
+                <label for="email_std">Email:</label>
+                <input type="email" id="email_std" name="email_std" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <form action="#" method="POST" id="redirectForm">
+            <button type="submit" name="redirect" value="login_std_back">Back</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'login_std_back') {
+                this.action = "{{ url_for('login_std_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

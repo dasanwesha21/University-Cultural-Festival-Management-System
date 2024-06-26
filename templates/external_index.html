@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to External Page</h2>
+        <div class="buttons">
+            <form action="#" method="POST" id="signupForm_ext">
+                <button type="submit">Sign Up</button>
+            </form>
+            <form action="#" method="POST" id="loginForm_ext">
+                <button type="submit">Log In</button>
+            </form>
+            <form action="#" method="POST" id="redirectForm">
+                <button type="submit" name="redirect" value="external_index_back">Back</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm_ext').addEventListener('submit', function(event) {
+            this.action = "{{ url_for('signup_ext')}}";
+        });
+
+        document.getElementById('loginForm_ext').addEventListener('submit', function(event) {
+            this.action = "{{ url_for('login_ext')}}";
+        });
+
+        document.getElementById('redirectForm').addEventListener('submit', function(event) {
+            var redirectType = event.submitter.value;
+            if (redirectType === 'external_index_back') {
+                this.action = "{{ url_for('external_index_back') }}";
+            }
+        });
+    </script>
+</body>
+</html>

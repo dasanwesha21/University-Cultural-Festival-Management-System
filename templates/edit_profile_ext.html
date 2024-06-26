@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form action = " {{ url_for('submit_profile_ext', ext_id = external.id)}}" ,method="POST">
+            <div class="form-group" id="name_external">
+                <label for="name_external">Name</label>
+                <input type="text" id="name_external" name="name_external" required value ={{external.name_}} >
+            </div>
+            <div class="form-group" id="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required value = {{external.email}}>
+            </div>
+            <div class="form-group" id="college_name">
+                <label for="college_name">College Name</label>
+                <input type="text" id="college_name" name="college_name" required value = {{external.college_name}}>
+            </div>
+            <div class="form-group" id="old_password">
+                <label for="old_password">Old Password</label>
+                <input type="password" id="old_password" name="old_password" required>
+            </div>
+            <div class="form-group" id="new_password">
+                <label for="new_password">New Password</label>
+                <input type="password" id="new_password" name="new_password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+        <a href = "{{ url_for('profile_ext' ,ext_name = external.id)}}" class = 'btn btn-primary' >Back</a>
+    </div>
+</html>

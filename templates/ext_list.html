@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1>User List</h1>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>College Name</th>
+            <th>Accommodation</th>
+            <th>Canteen</th>
+            <th>Action</th>
+
+        </tr>
+        {% for user in externals %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name_ }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.college_name }}</td>
+                <td>{{ user.accommodation }}</td>
+                <td>{{ user.canteen }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_user', user_id=user.id) }}" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

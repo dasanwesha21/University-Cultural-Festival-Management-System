@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Externals Page</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, External User!</h2>
+        <p>Here are the available options for you:</p>
+        <!-- ext_name = {{ext_name}} -->
+        <a href = "{{ url_for('event_listext', ext_name=ext_name) }}">List of Events</a>
+        <!-- <a href = "/event_listext?ext_name = {{ext_name}}">List of Events</a> -->
+        <a href = "{{ url_for('profile_ext' , ext_name =ext_name) }}">Your Profile</a>               
+        <a href = "/logout">Logout</a>
+    </div>
+</body>
+</html>
+
